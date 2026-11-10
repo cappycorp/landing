@@ -1,0 +1,35 @@
+{
+  "brand": {
+    "ink": "#0B0B0B",
+    "charcoal": "#2A2A2A",
+    "midGray": "#6B6B6B",
+    "softGray": "#E5E5E5",
+    "paper": "#FFFFFF"
+  },
+  "typography": {
+    "display": "Suisse Intl / Inter",
+    "body": "Inter",
+    "mono": "JetBrains Mono"
+  },
+  "spacing": {
+    "unit": 8,
+    "scale": [
+      4,
+      8,
+      12,
+      16,
+      24,
+      32,
+      48,
+      64,
+      96
+    ]
+  },
+  "radius": {
+    "small": 8,
+    "medium": 12,
+    "large": 20,
+    "pill": 999
+  },
+  "tagline": "Stay curious. Build useful things."
+}

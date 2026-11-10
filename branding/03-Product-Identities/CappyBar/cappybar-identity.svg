@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 160" role="img" aria-label="CappyCorp brand mark">
+
+<rect x="5" y="5" width="390" height="150" rx="18" fill="#F5F5F5"/>
+<circle cx="65" cy="80" r="37" fill="#0B0B0B"/>
+<text x="65" y="92" text-anchor="middle" font-family="Arial,sans-serif" font-size="34" font-weight="600" fill="#fff">⌕</text>
+<text x="120" y="76" font-family="Inter,Arial,sans-serif" font-size="29" font-weight="650" fill="#0B0B0B">CappyBar</text>
+<text x="120" y="103" font-family="Inter,Arial,sans-serif" font-size="12" fill="#555">Technical search for developers</text>
+<text x="120" y="128" font-family="Inter,Arial,sans-serif" font-size="10" letter-spacing="2" fill="#888">A CAPPYCORP PRODUCT</text>
+</svg>

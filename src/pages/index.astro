@@ -1,0 +1,143 @@
+---
+import "../styles/global.css";
+import Hero from "../components/Hero";
+import Products from "../components/Products";
+import Stats from "../components/Stats";
+import FamilyDiagram from "../components/FamilyDiagram";
+import Reveal from "../components/Reveal";
+import Peek from "../components/Peek";
+import markRaw from "../../branding/01-Logo/Primary/capybara-mark-white.svg?raw";
+
+const tagline = "Stay curious. Build useful things.";
+const description =
+  "CappyCorp is an independent technology company building software products, developer tools, infrastructure and experimental projects.";
+const title = `CappyCorp — ${tagline}`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL("/og.png", Astro.site);
+const github = "https://github.com/cappycorp";
+// inline so the wordmark text uses the page's Inter (an <img> SVG can't load web fonts)
+const mark = markRaw.replace('role="img" aria-label="CappyCorp brand mark"', 'aria-hidden="true"');
+const traits = ["Engineering-driven", "Independent", "Curious", "Approachable", "Reliable", "Developer-focused"];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0B0B0B" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <noscript><style>[style*="opacity:0"]{opacity:1!important;transform:none!important;filter:none!important}</style></noscript>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="frame">
+        <a href="/" class="brand"><span class="brand-mark" set:html={mark} />CappyCorp</a>
+        <nav aria-label="Main">
+          <a href="#products">Products</a>
+          <a href="#family">Family</a>
+          <a href="#about">About</a>
+        </nav>
+        <div class="header-cta">
+          <a href={github} rel="noopener">GitHub</a>
+          <a class="btn btn-sm" href="#products">Explore</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="frame">
+      <Hero client:load mark={mark} github={github} />
+      <div class="rule"></div>
+
+      <Stats client:visible />
+      <div class="rule"></div>
+
+      <section id="products">
+        <div class="split">
+          <div>
+            <Reveal client:visible>
+              <p class="mono eyebrow">Products</p>
+              <h2>Six products.<br /><span class="accent">One family.</span></h2>
+            </Reveal>
+          </div>
+          <div>
+            <Reveal client:visible delay={0.1}>
+              <p class="lede">
+                Each product keeps its own personality, unified by the same capybara, the same monochrome system and the
+                same care for the people who build.
+              </p>
+            </Reveal>
+          </div>
+        </div>
+        <Products client:visible />
+      </section>
+      <div class="rule"></div>
+
+      <section id="family">
+        <div class="split">
+          <div>
+            <Reveal client:visible>
+              <p class="mono eyebrow">Brand architecture</p>
+              <h2>One capybara.<br />Six ways to build.</h2>
+            </Reveal>
+          </div>
+          <div>
+            <Reveal client:visible delay={0.1}>
+              <p class="lede">
+                Search, infrastructure, tooling, research, monitoring and webhooks. Every product shares the parent mark,
+                the palette and the type. The name does the differentiating.
+              </p>
+            </Reveal>
+          </div>
+        </div>
+        <FamilyDiagram client:visible />
+      </section>
+      <div class="rule"></div>
+
+      <section id="about" class="split">
+        <div>
+          <Reveal client:visible>
+            <p class="mono eyebrow">About</p>
+            <h2>Calm, curious<br />engineering.</h2>
+          </Reveal>
+        </div>
+        <div>
+          <Reveal client:visible delay={0.1}>
+            <p class="lede">
+              We are an independent company that prefers concrete work over hype. We build software products, developer
+              tools, infrastructure and experiments, and we keep them simple, reliable and quietly useful.
+            </p>
+            <ul class="traits">
+              {traits.map((t) => <li>{t}</li>)}
+            </ul>
+          </Reveal>
+        </div>
+      </section>
+      <div class="rule"></div>
+
+      <footer class="site-footer">
+        <a href="/" class="brand"><span class="brand-mark" set:html={mark} />CappyCorp</a>
+        <p>{tagline}</p>
+        <p class="mono">© 2026 CappyCorp</p>
+        <Peek client:visible />
+      </footer>
+    </main>
+  </body>
+</html>
