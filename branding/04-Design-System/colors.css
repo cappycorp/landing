@@ -1,0 +1,16 @@
+:root {
+  --cc-ink: #0B0B0B;
+  --cc-charcoal: #2A2A2A;
+  --cc-mid-gray: #6B6B6B;
+  --cc-soft-gray: #E5E5E5;
+  --cc-paper: #FFFFFF;
+  --cc-space-1: 4px;
+  --cc-space-2: 8px;
+  --cc-space-3: 12px;
+  --cc-space-4: 16px;
+  --cc-space-5: 24px;
+  --cc-space-6: 32px;
+  --cc-radius-sm: 8px;
+  --cc-radius-md: 12px;
+  --cc-radius-lg: 20px;
+}
